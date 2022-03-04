@@ -20,7 +20,7 @@ export const Section = styled.section`
     }
 
     div {
-        margin: 30px;
+        margin: 30px 30px 0 0;
         width: 100%;
         text-align: left;
     }

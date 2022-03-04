@@ -4,7 +4,8 @@ import { Input } from "../input";
 import { Loading } from "../loading";
 import { MoviesResults } from "../moviesResults";
 import { ScrollMovie } from "../scrollMovie";
-import { Box } from "./styles";
+import { Box, PaginationBox } from "./styles";
+import { Button } from '../button'
 
 interface Category {
   title: string;
@@ -18,6 +19,7 @@ interface Category {
 }
 
 interface Movie {
+  id: number,
   title: string;
   poster_path: string;
 }
@@ -38,12 +40,12 @@ export const MoviesList = () => {
     fetchData();
   }, [pagination]);
 
-  async function nextPagination() {
+  function nextPagination() {
     if (pagination === 10) return;
     setPagination((pagination) => pagination + 1);
   }
 
-  async function backPagination() {
+  function backPagination() {
     if (pagination === 1) return;
     setPagination((pagination) => pagination - 1);
   }
@@ -83,14 +85,24 @@ export const MoviesList = () => {
           <Loading />
         )}
 
+        {
+          search === '' &&
+           <PaginationBox>
+             <Button back='Voltar' next='Avançar' pagination={pagination} backPagination={backPagination} nextPagination={nextPagination}/>
+           </PaginationBox>
+        }
+
         {search !== "" 
-          ? moviesSearched.map((movie: Movie, index: number) => (
+          ? moviesSearched.map((movie: Movie, index: number) => {
+           return (
               <MoviesResults
                 title={movie.title}
-                key={index}
+                key={movie.id}
                 src={movie.poster_path}
+                id={movie.id}
               />
-            ))
+            )
+          })
           : categories.map((category: Category, index: number) => (
               <div key={index}>
                 <ScrollMovie
@@ -99,9 +111,17 @@ export const MoviesList = () => {
                   nextPagination={nextPagination}
                   backPagination={backPagination}
                 />
-                <p>Página {pagination} de 10</p>
+                
               </div>
             ))}
+
+            
+        {
+          search === '' &&
+           <PaginationBox className='box-button'>
+             <Button back='Voltar' next='Avançar' pagination={pagination} backPagination={backPagination} nextPagination={nextPagination}/>
+           </PaginationBox>
+        }
       </Box>
     </div>
   );

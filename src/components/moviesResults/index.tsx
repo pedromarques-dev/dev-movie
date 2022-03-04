@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import { Section } from "./styles";
 
 interface propsResults {
-  title: string,
-  src: string
+  id: number;
+  title: string;
+  src: string;
 }
 
 export const MoviesResults = (props: propsResults) => {
@@ -10,10 +12,12 @@ export const MoviesResults = (props: propsResults) => {
     <Section>
       {props.src !== "" && (
         <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w300${props.src}`}
-            alt={props.title}
-          />
+          <Link to={`/${props.id}`}>
+            <img
+              src={`https://image.tmdb.org/t/p/w300${props.src}`}
+              alt={props.title}
+            />
+          </Link>
         </div>
       )
       }
