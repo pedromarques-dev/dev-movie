@@ -7,7 +7,7 @@ const loadData = async (url: string) => {
   return json;
 };
 
-export const loadDetailsMovie = async (id: any) => {
+export const loadDetailsMovie = async (id: number) => {
   const response = await fetch(
     `${baseURL}/movie/${id}?api_key=${API_KEY}&language=pt-BR`
   );
@@ -17,13 +17,13 @@ export const loadDetailsMovie = async (id: any) => {
 
 export const loadMoviesSearched = async (str: string) => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=fa6fc9c1047796a4005e64a3b7d0803d&language=en-US&page=1&include_adult=false&query=${str}`
+    `https://api.themoviedb.org/3/search/movie?api_key=fa6fc9c1047796a4005e64a3b7d0803d&language=pt-BR&page=1&include_adult=false&query=${str}`
   );
   const json = response.json();
   return json;
 };
 
-export const getMovieList: any = async (pagination: number) => {
+export const getMovieList = async (pagination: number) => {
   return [
     {
       title: "Aventura",
@@ -61,11 +61,5 @@ export const getMovieList: any = async (pagination: number) => {
         `/discover/movie?with_genres=35%&language=pt-BR&api_key=${API_KEY}&page=${pagination}`
       ),
     },
-    // {
-    //   title: "Resultados",
-    //   elements: await loadData(
-    //     `/search/movie?api_key=fa6fc9c1047796a4005e64a3b7d0803d&language=en-US&page=1&include_adult=false&query=${search}`
-    //   ),
-    // }
   ];
 };

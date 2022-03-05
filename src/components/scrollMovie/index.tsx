@@ -1,22 +1,9 @@
 // import { useState } from "react";
 import { Link } from "react-router-dom";
+import { IScrollMovie } from "../../interfaces";
 import { Section } from "./styles";
 
-interface propsScrolLMovie {
-  title: string;
-  elements: {
-    results: [
-      {
-        poster_path: string;
-      }
-    ];
-  };
-
-  nextPagination: React.MouseEventHandler<HTMLButtonElement>;
-  backPagination: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-export const ScrollMovie = (props: propsScrolLMovie) => {
+export const ScrollMovie = (props: IScrollMovie) => {
   return (
     <Section>
       <h2 id={props.title.toLowerCase()}>{props.title}</h2>

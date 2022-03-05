@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
+import { propsResults } from "../../interfaces";
 import { Section } from "./styles";
-
-interface propsResults {
-  id: number;
-  title: string;
-  src: string;
-}
 
 export const MoviesResults = (props: propsResults) => {
   return (

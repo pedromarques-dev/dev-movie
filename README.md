@@ -29,6 +29,7 @@
 
   O desafio submete manipulação de array com hooks no react, onde você vai renderizar na tela as bebidas que estão atualmente contidas no estoque. Deve ser possível tambem remover bebidas, adicionar uma bebida nova e filtrar bebidas pelo campo de busca.
   Alguns metodos utilizados no projeto:
+  <img src='./public/assets/images/dev-movie.gif'>
    
    * React-router-dom;
    * Hooks;

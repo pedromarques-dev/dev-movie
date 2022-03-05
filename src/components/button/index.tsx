@@ -1,6 +1,14 @@
 import { BoxButton } from "./styles"
 
-export const Button = (props: any) => {
+interface IButton {
+    back: string;
+    next: string;
+    pagination: number;
+    backPagination: React.MouseEventHandler<HTMLButtonElement>
+    nextPagination: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export const Button = (props: IButton) => {
     return (
         <BoxButton>
             <button onClick={props.backPagination}><i className="fas fa-caret-left"></i></button>

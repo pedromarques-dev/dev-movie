@@ -1,6 +1,13 @@
 import { Section } from "./styles";
 
-export const Input = (props: any) => {
+interface IInput {
+  type: string;
+  placeholder: string;
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>
+}
+
+export const Input = (props: IInput) => {
   return (
     <Section>
       <input {...props} />

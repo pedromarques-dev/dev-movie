@@ -15,7 +15,7 @@ export const Section = styled.section`
 
   h2 {
     margin-top: 25px;
-    padding: 0 50px;
+    padding: 0 70px;
     color: white;
   }
 

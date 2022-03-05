@@ -1,22 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { IMovieDetails, IGenre } from "../../interfaces";
 import { loadDetailsMovie } from "../../services/tmdb";
 import { Section } from "./styles";
 
-interface IGenre {
-  id?: number;
-  name: string;
-}
-
-interface IMovie {
-  title: string;
-  image: string;
-  description: string;
-  genres: IGenre[];
-}
-
 export const MovieDetails = () => {
-  const [movie, setMovie] = useState<IMovie>({
+  const [movie, setMovie] = useState<IMovieDetails>({
     title: "",
     image: "",
     description: "",
@@ -24,18 +13,14 @@ export const MovieDetails = () => {
   });
   const { id } = useParams();
 
-  console.log("movie", movie);
-  
   useEffect(() => {
     const fetchData = async () => {
-      const data = await loadDetailsMovie(id);
+      const data = await loadDetailsMovie(Number(id));
       setMovie({
         title: data.title,
         image: data.poster_path,
         description: data.overview,
-        genres: data.genres.map((genre: IGenre) =>
-          genre
-        ),
+        genres: data.genres.map((genre: IGenre) => genre),
       });
     };
     fetchData();
@@ -56,9 +41,9 @@ export const MovieDetails = () => {
       <div>
         <h2>Genêros:</h2>
         <div>
-          {
-            movie.genres.map((genre: IGenre) => <li key={genre.id}>{genre.name}</li>)
-          }
+          {movie.genres.map((genre: IGenre) => (
+            <li key={genre.id}>{genre.name}</li>
+          ))}
         </div>
         <h2>Sinopse:</h2>
         <p>{movie.description}</p>

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const BoxButton = styled.div`
   display: flex;
@@ -18,5 +18,9 @@ export const BoxButton = styled.div`
 
   i {
     color: white;
+  }
+
+  i:active{
+      color: #991c1c;
   }
 `;
