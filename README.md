@@ -11,7 +11,7 @@
    * [Status](#status)
    * [Objetivo](#objetivo)
    * [Tecnologias](#tecnologias)
-   * [Acessando o site](#acessando-o-site)
+   * [Curiosidade](#curiosidade)
 
 ## Como usar
  Para utilizar os arquivos do projeto na sua maquina, você deve seguir os passos abaixos:
@@ -31,10 +31,9 @@
 ## Objetivo
 
   O desafio é criar uma listagem d eobjetos(filmes) onde poderá ser filtrado qualquer um dos filmes através do campo de busca. Essa filtragem deve ser automatica, de acordo com o que o usuário está digitando no campo. Os desafios extras eram criar uma paginação e uma pagina interna de cada filme com seus detalhes.
-
-
-  Alguns metodos utilizados no projeto:
   <img src='./public/assets/images/dev-movie.gif'>
+  
+  Alguns metodos utilizados no projeto:
    
    * React-router-dom;
    * Hooks;
@@ -47,9 +46,6 @@
    * Interfaces com TypeScript
    * Styled Components
    * Paginação 
-   
-![image](https://user-images.githubusercontent.com/81711739/156869631-36ec5ace-55ed-491b-b8f9-d2d4f919efb7.png)
-
 
 ## Tecnologias
 
@@ -60,7 +56,7 @@
  * GIT
  * Integração com API
 
-## Acessando o site
+## Curiosidade
+  Essa é a pagina interna com alguns detalhes do filme:
+  ![image](https://user-images.githubusercontent.com/81711739/156869631-36ec5ace-55ed-491b-b8f9-d2d4f919efb7.png)
 
-  Para acessar o site, clique em: 
-  <a href='https://bebidas-geoscorp-go.vercel.app/' target='_blank' >Bebidas GeoscorpGO</a>
