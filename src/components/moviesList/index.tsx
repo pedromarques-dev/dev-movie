@@ -8,7 +8,6 @@ import { Box, PaginationBox } from "./styles";
 import { Button } from "../button";
 import { ICategory, IMovieResults } from "../../interfaces";
 
-
 export const MoviesList = () => {
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [search, setSearch] = useState<string>("");
@@ -20,7 +19,6 @@ export const MoviesList = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getMovieList(pagination);
-      console.log(data)
       setCategories(data);
     };
     fetchData();
@@ -42,12 +40,12 @@ export const MoviesList = () => {
     setLoading(true);
 
     setTimeout(() => {
-      filterMovies(textTyped.toLowerCase());
+      filterMovies(textTyped);
     }, timingOfLoading);
   }
 
   async function filterMovies(search: string) {
-    if (search === "") return;
+    if (!search) return;
 
     const fetchData = async () => {
       const searchMovies = await loadMoviesSearched(search);
@@ -67,50 +65,51 @@ export const MoviesList = () => {
         onChange={handleChange}
       />
       <Box>
-        {loading && search !== "" && <Loading />}
+      {loading && search && <Loading />}
 
-        {search === "" && (
-          <PaginationBox>
-            <Button
-              back="Voltar"
-              next="Avançar"
-              pagination={pagination}
-              backPagination={backPagination}
-              nextPagination={nextPagination}
-            />
-          </PaginationBox>
-        )}
+        {search ? (
+          moviesSearched.map((movie: IMovieResults) => {
+            return (
+              <MoviesResults
+                title={movie.title}
+                key={movie.id}
+                src={movie.poster_path}
+                id={movie.id}
+              />
+            );
+          })
+        ) : (
+          <>
+            <PaginationBox>
+              <Button
+                back="Voltar"
+                next="Avançar"
+                pagination={pagination}
+                backPagination={backPagination}
+                nextPagination={nextPagination}
+              />
+            </PaginationBox>
+            <div>
+              {categories.map((category: ICategory, index: number) => (
+                <div key={index}>
+                  <ScrollMovie
+                    title={category.title}
+                    elements={category.elements}
+                  />
+                </div>
+              ))}
 
-        {search !== ""
-          ? moviesSearched.map((movie: IMovieResults) => {
-              return (
-                <MoviesResults
-                  title={movie.title}
-                  key={movie.id}
-                  src={movie.poster_path}
-                  id={movie.id}
+              <PaginationBox className="box-button">
+                <Button
+                  back="Voltar"
+                  next="Avançar"
+                  pagination={pagination}
+                  backPagination={backPagination}
+                  nextPagination={nextPagination}
                 />
-              );
-            })
-          : categories.map((category: ICategory, index: number) => (
-              <div key={index}>
-                <ScrollMovie
-                  title={category.title}
-                  elements={category.elements}
-                />
-              </div>
-            ))}
-
-        {search === "" && (
-          <PaginationBox className="box-button">
-            <Button
-              back="Voltar"
-              next="Avançar"
-              pagination={pagination}
-              backPagination={backPagination}
-              nextPagination={nextPagination}
-            />
-          </PaginationBox>
+              </PaginationBox>
+            </div>
+          </>
         )}
       </Box>
     </div>

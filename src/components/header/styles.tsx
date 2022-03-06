@@ -29,7 +29,7 @@ export const Section = styled.section`
   }
 
   li:hover a {
-    color: black;
+    color: #ec0404;
   }
 
   a {

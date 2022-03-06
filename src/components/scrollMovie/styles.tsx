@@ -24,6 +24,7 @@ export const Section = styled.section`
     justify-content: center;
     flex-wrap: wrap;
     padding:10px;
+    
   }
 
   @media (max-width: 776px){

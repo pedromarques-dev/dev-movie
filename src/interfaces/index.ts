@@ -9,6 +9,8 @@ export interface ICategory {
   elements: {
     results: [
       {
+        id: number;
+        title: string;
         poster_path: string;
       }
     ];
@@ -16,14 +18,9 @@ export interface ICategory {
 }
 
 export interface IScrollMovie {
+  id: number;
   title: string;
-  elements: {
-    results: [
-      {
-        poster_path: string;
-      }
-    ];
-  };
+  poster_path: string;  
 }
 
 export interface propsResults {
@@ -33,7 +30,7 @@ export interface propsResults {
 }
 
 export interface IGenre {
-  id?: number;
+  id: number;
   name: string;
 }
 
@@ -43,3 +40,4 @@ export interface IMovieDetails {
   description: string;
   genres: IGenre[];
 }
+

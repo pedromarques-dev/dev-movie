@@ -5,7 +5,7 @@ import { Section } from "./styles";
 export const MoviesResults = (props: propsResults) => {
   return (
     <Section>
-      {props.src !== "" && (
+      {props.src && (
         <div>
           <Link to={`/${props.id}`}>
             <img

@@ -20,7 +20,7 @@ export const MovieDetails = () => {
         title: data.title,
         image: data.poster_path,
         description: data.overview,
-        genres: data.genres.map((genre: IGenre) => genre),
+        genres: data.genres,
       });
     };
     fetchData();
