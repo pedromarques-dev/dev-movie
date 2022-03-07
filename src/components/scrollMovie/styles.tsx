@@ -28,8 +28,11 @@ export const Section = styled.section`
   }
 
   @media (max-width: 776px){
+
+
       h2{
-          text-align:center;
+          text-align: center;
+          padding: 0;
       }
   }
 `;
