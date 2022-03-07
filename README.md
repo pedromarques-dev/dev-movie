@@ -60,3 +60,6 @@
   Essa é a pagina interna com alguns detalhes do filme:
   ![image](https://user-images.githubusercontent.com/81711739/156869631-36ec5ace-55ed-491b-b8f9-d2d4f919efb7.png)
 
+## Acessando o site
+
+  Para acessar o site, clique no link a seguir: <a href='https://dev-movie.vercel.app/' target='_blank'>Dev Movie</a>
