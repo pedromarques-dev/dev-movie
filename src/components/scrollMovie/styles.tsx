@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-
   img {
     transform: scale(0.9);
     transition: 0.2s ease-in-out;
@@ -23,16 +22,17 @@ export const Section = styled.section`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding:10px;
-    
+    padding: 10px;
   }
 
-  @media (max-width: 776px){
+  @media (max-width: 776px) {
+    h2 {
+      text-align: center;
+      padding: 0;
+    }
+  }
 
-
-      h2{
-          text-align: center;
-          padding: 0;
-      }
+  @media (max-width: 425px) {
+    text-align: center;
   }
 `;

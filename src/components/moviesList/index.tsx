@@ -82,8 +82,6 @@ export const MoviesList = () => {
           <>
             <PaginationBox>
               <Button
-                back="Voltar"
-                next="Avançar"
                 pagination={pagination}
                 backPagination={backPagination}
                 nextPagination={nextPagination}
@@ -101,8 +99,6 @@ export const MoviesList = () => {
 
               <PaginationBox className="box-button">
                 <Button
-                  back="Voltar"
-                  next="Avançar"
                   pagination={pagination}
                   backPagination={backPagination}
                   nextPagination={nextPagination}

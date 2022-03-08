@@ -1,12 +1,5 @@
+import { IButton } from "../../interfaces"
 import { BoxButton } from "./styles"
-
-interface IButton {
-    back: string;
-    next: string;
-    pagination: number;
-    backPagination: React.MouseEventHandler<HTMLButtonElement>
-    nextPagination: React.MouseEventHandler<HTMLButtonElement>
-}
 
 export const Button = (props: IButton) => {
     return (

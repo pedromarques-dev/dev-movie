@@ -4,6 +4,21 @@ export interface IMovieResults {
   poster_path: string;
 }
 
+export interface IButton {
+  pagination: number;
+  backPagination: React.MouseEventHandler<HTMLButtonElement>
+  nextPagination: React.MouseEventHandler<HTMLButtonElement>
+}
+
+
+export interface IInput {
+  type: string;
+  placeholder: string;
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>
+}
+
+
 export interface ICategory {
   title: string;
   elements: {

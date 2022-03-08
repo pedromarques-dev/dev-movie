@@ -7,17 +7,17 @@ import { Section } from "./styles";
 export const ScrollMovie = (props: ICategory) => {
   return (
     <Section>
-      <h2 id={props.title.toLowerCase()}>{props.title}</h2>
+      <h2>{props.title}</h2>
       <div>
         {props.elements.results.map((movie: IScrollMovie) => {
         return (
           <Link key={movie.id} to={`/${movie.id}`}>
-            <section>
+            <div>
               <img
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                 alt={props.title}
               />
-            </section>
+            </div>
           </Link>
         )})}
       </div>
