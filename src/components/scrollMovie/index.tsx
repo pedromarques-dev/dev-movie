@@ -7,7 +7,7 @@ import { Section } from "./styles";
 export const ScrollMovie = (props: ICategory) => {
   return (
     <Section>
-      <h2>{props.title}</h2>
+      <h2 id={props.title.toLowerCase()}>{props.title}</h2>
       <div>
         {props.elements.results.map((movie: IScrollMovie) => {
         return (

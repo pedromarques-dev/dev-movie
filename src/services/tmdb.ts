@@ -17,7 +17,7 @@ export const loadDetailsMovie = async (id: number) => {
 
 export const loadMoviesSearched = async (str: string) => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=fa6fc9c1047796a4005e64a3b7d0803d&language=pt-BR&page=1&include_adult=false&query=${str}`
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=pt-BR&page=1&include_adult=false&query=${str}`
   );
   const json = response.json();
   return json;
