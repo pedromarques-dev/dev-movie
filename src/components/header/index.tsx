@@ -1,25 +1,44 @@
-import { Link } from "react-router-dom"
-import { Section } from "./styles"
+import { Box, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import Search, { IProps as SearchProps } from "../Search";
 
-export const Header = () => {
-    return (
-        <Section>
-            <div>
-                <Link to='/'>
-                    <h1>Dev Movie</h1>
-                </Link>
-            </div>
-
-            <nav>
-                <ul>        
-                    <li><a href="#aventura">Aventura 🔥</a></li>
-                    <li><a href="#terror">Terror 😱</a></li>
-                    <li><a href="#ficção cientifica">Ficção cientifica 👨‍🔬</a></li>
-                    <li><a href="#animação">Animação 🐱</a></li>
-                    <li><a href="#suspense">Suspense 🧛‍♂️</a></li>
-                    <li><a href="#comédia">Comedia 😂</a></li>
-                </ul>
-            </nav>
-        </Section>
-    )
+interface IProps {
+  searchProps?: SearchProps;
 }
+
+export const Header = (props: IProps) => {
+  return (
+    <Box
+      position="fixed"
+      top="0"
+      w="100%"
+      display="flex"
+      justifyContent={{
+        base: "center",
+        md: "space-between",
+      }}
+      alignItems="center"
+      flexWrap="wrap"
+      bg="#161515"
+      p="10px"
+    >
+      <Box>
+        <Link to="/">
+          <Text fontSize="40px" color="#c22b2bca" p="5px">
+            Dev Movie
+          </Text>
+        </Link>
+      </Box>
+
+      {props.searchProps && (
+        <Search
+          type={props.searchProps.type}
+          placeholder="Buscar filmes..."
+          value={props.searchProps.value}
+          onChange={props.searchProps.onChange}
+          onClick={props.searchProps.onClick}
+        />
+      )}
+    </Box>
+  );
+};

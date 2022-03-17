@@ -7,7 +7,7 @@ const loadData = async (url: string) => {
   return json;
 };
 
-export const loadDetailsMovie = async (id: number) => {
+export const loadDetailsMovie = async (id: string) => {
   const response = await fetch(
     `${baseURL}/movie/${id}?api_key=${API_KEY}&language=pt-BR`
   );

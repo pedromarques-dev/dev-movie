@@ -1,14 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Header } from "../components/header";
-import { Homepage } from "./homepage";
-import { MoviePage } from "./moviepage";
+import Home from "./Home";
+import MoviePage  from "./Movie/moviepage";
 
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/:id" element={<MoviePage />} />
       </Routes>
     </BrowserRouter>

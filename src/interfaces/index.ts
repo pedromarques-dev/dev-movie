@@ -14,8 +14,11 @@ export interface IButton {
 export interface IInput {
   type: string;
   placeholder: string;
-  value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>
+  search?: {
+    value: string;
+    onChange: React.ChangeEventHandler<HTMLInputElement>
+    onClick: React.MouseEventHandler<HTMLButtonElement>
+  } 
 }
 
 
@@ -51,8 +54,8 @@ export interface IGenre {
 
 export interface IMovieDetails {
   title: string;
-  image: string;
-  description: string;
+  poster_path: string;
+  overview: string;
   genres: IGenre[];
 }
 
