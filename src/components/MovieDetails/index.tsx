@@ -1,9 +1,10 @@
 import { observer } from "mobx-react-lite";
 import { IMovieDetails } from "../../interfaces";
 import useImageColor from "use-image-color";
-import { Box, Image, Text, Grid } from "@chakra-ui/react";
+import { Box, Image, Text, Grid, Button } from "@chakra-ui/react";
 import GenreList from "../ListOfGenres";
 import Overview from "../Overview";
+import { Link } from "react-router-dom";
 
 interface IProps {
   movieDetails: IMovieDetails;
@@ -33,9 +34,8 @@ const MovieDetails = (props: IProps) => {
           textAlign={{
             base: "center",
             md: "inherit",
-          }}
-          mt="90px"
-          minH="88vh"
+          }}  
+          minH="90.5vh"
         >
           <Box pt='125px' color="#111" >
             <Text fontSize="25px" m="15px" >
@@ -43,6 +43,15 @@ const MovieDetails = (props: IProps) => {
             </Text>
             <GenreList movieDetails={props.movieDetails} />
             <Overview overview={props.movieDetails.overview} />
+            <Link to="/"> 
+              <Button 
+                w={40}
+                variant="outline"
+                mt={5}
+              >
+                Voltar
+              </Button>
+            </Link>
           </Box>
 
           <Box

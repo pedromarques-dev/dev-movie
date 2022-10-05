@@ -9,8 +9,6 @@ interface IProps {
 export const Header = (props: IProps) => {
   return (
     <Box
-      position="fixed"
-      top="0"
       w="100%"
       display="flex"
       justifyContent={{
@@ -36,7 +34,6 @@ export const Header = (props: IProps) => {
           placeholder="Buscar filmes..."
           value={props.searchProps.value}
           onChange={props.searchProps.onChange}
-          onClick={props.searchProps.onClick}
         />
       )}
     </Box>

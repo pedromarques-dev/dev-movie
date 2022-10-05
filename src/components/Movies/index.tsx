@@ -6,15 +6,15 @@ import { observer } from "mobx-react-lite";
 
 const Movies = (props: ICategory) => {
   return (
-    <Box>
-      <Text fontSize="3xl" color="white" p="15px">
+    <Box mx={4}>
+      <Text fontSize="3xl" color="white" py="15px">
         {props.title}
       </Text>
-      <Flex w='100%' flexWrap='wrap' flexGrow='3'>
+      <Flex w='100%' flexWrap='wrap' justifyContent="center">
         {props.elements.results.map((movie: IScrollMovie) => {
           return (
-            <Link key={movie.id} to={`/${movie.id}`}>
-              <Box position="relative" textAlign="center" w='100%' minWidth='300px' minHeight='450px' h='100%' flex='1' >
+            <Link key={movie.id} to={`/${movie.id}`} >
+              <Box position="relative" textAlign="center" w='100%' minWidth='310px' minHeight='450px' h='100%' >
                 <Box 
                   bgImage={`url(https://image.tmdb.org/t/p/w300${movie.poster_path})`}
                   bgSize='cover' 
@@ -45,4 +45,4 @@ const Movies = (props: ICategory) => {
   );
 };
 
-  export default observer(Movies)
+export default observer(Movies)

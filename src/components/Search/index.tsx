@@ -7,7 +7,6 @@ export interface IProps {
   placeholder: string;
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const Search = (props: IProps) => {
@@ -21,7 +20,7 @@ const Search = (props: IProps) => {
     >
       <Input
         type="search"
-        placeholder="Filter"
+        placeholder="Buscar Filme..."
         value={props.value}
         onChange={props.onChange}
         w="350px"
@@ -39,7 +38,6 @@ const Search = (props: IProps) => {
       <IconButton
         icon={<SearchIcon />}
         aria-label="Search database"
-        onClick={props.onClick}
         bg="0"
         size="md"
         color="white"

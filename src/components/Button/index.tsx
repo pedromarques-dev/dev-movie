@@ -8,7 +8,7 @@ export const Buttons = (props: IButton) => {
       spacing={2}
       direction="row"
       display="flex"
-      alignItems="baseline"
+      alignItems="center"
       color="white"
     >
       <Button

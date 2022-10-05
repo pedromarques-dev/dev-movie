@@ -13,30 +13,25 @@ export class Store {
   public timingOfLoading: number = 2000; // 2 segundos
   public pagination: number = 1;
   public loading: boolean = false
+  public loadingForSearched: boolean = false
 
   public handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.search = event.currentTarget.value;
 
-    // setTimeout(() => {
-    //   // this.fetchSearchedMovies();
-    //   // this.handleClick()
-    //   console.log('ola')
-    // }, this.timingOfLoading);
+    setTimeout(() => {
+      this.fetchSearchedMovies();
+    }, this.timingOfLoading);
   };
-
-  public handleClick = () => {
-    this.fetchSearchedMovies();
-  }
 
   public nextPagination = () => {
     if (this.pagination === 10) return;
-    this.setPaginationNext()
+    this.pagination++
     this.fetch()
   }
 
   public backPagination = () => {
     if (this.pagination === 1) return;
-    this.setPaginationBack()
+    this.pagination--
     this.fetch()
   }
 
@@ -48,17 +43,13 @@ export class Store {
     this.moviesSearched = movie;
   }
 
-  public setPaginationNext = () => {
-    this.pagination++
-  }
-
-  public setPaginationBack = () => {
-      this.pagination--
-  }
-
   public setLoading = (loading: boolean) => {
       this.loading = loading
   }
+
+  public setLoaderForSearched = (loading: boolean) => {
+    this.loadingForSearched = loading
+}
 
   public fetch = async () => {
     if(this.loading){
@@ -78,21 +69,21 @@ export class Store {
   };
 
   public fetchSearchedMovies = async () => {
-    if(this.loading){
+    if(this.loadingForSearched){
         return ;
     }
 
-    this.setLoading(true)
+    this.setLoaderForSearched(true)
 
     try {
-      if (!this.search) return;
+      if (!this.search) return ;
 
       const search = await loadMoviesSearched(this.search);
       this.setMoviesSearched(search.results);
     } catch (e) {
       console.error(e);
     } finally {
-        this.setLoading(false)
+        this.setLoaderForSearched(false)
     }
   };
 }

@@ -8,7 +8,7 @@ export const Loading = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Image src="./assets/images/loading.svg" alt="Loading" w="30%" />
+      <Image src="./assets/images/loading.svg" alt="Loading" w="10%" />
     </Box>
   );
 };

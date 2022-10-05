@@ -10,7 +10,7 @@ interface IProps {
 
 const MoviesSection: React.FC<IProps> = (props) => {
   return (
-      <Box bg="#000000" mt='90px'>
+      <Box bg="#000000" mt='10px'>
         {props.scrollMovie.map((category: ICategory, index: number) => (
           <Box key={index}>
             <Movies title={category.title} elements={category.elements} />
