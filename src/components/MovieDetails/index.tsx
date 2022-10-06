@@ -1,20 +1,27 @@
+import React from "react";
 import { observer } from "mobx-react-lite";
-import { IMovieDetails } from "../../interfaces";
-import useImageColor from "use-image-color";
-import { Box, Image, Text, Grid, Button } from "@chakra-ui/react";
-import GenreList from "../ListOfGenres";
-import Overview from "../Overview";
 import { Link } from "react-router-dom";
+import useImageColor from "use-image-color";
+import {
+  Box,
+  Image,
+  Text,
+  Grid,
+  Button,
+} from "@chakra-ui/react";
+import { IMovieDetails } from "../../interfaces";
+import { GenreList, Overview } from "../index";
 
 interface IProps {
   movieDetails: IMovieDetails;
 }
 
-const MovieDetails = (props: IProps) => {
+export const MovieDetails: React.FC<IProps> = observer((props) => {
   const { colors } = useImageColor(
     `https://image.tmdb.org/t/p/w300${props.movieDetails.poster_path}`,
     { cors: true, colors: 5 }
   );
+  const { movieDetails } = props;
 
   return (
     <>
@@ -39,10 +46,10 @@ const MovieDetails = (props: IProps) => {
         >
           <Box pt='125px' color="#111" >
             <Text fontSize="25px" m="15px" >
-              {props.movieDetails.title}
+              {movieDetails.title}
             </Text>
-            <GenreList movieDetails={props.movieDetails} />
-            <Overview overview={props.movieDetails.overview} />
+            <GenreList movieDetails={movieDetails} />
+            <Overview overview={movieDetails.overview} />
             <Link to="/"> 
               <Button 
                 w={40}
@@ -62,7 +69,7 @@ const MovieDetails = (props: IProps) => {
             }}
           >
             <Image
-              src={`https://image.tmdb.org/t/p/w500${props.movieDetails.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
               alt="Cartaz do filme"
               filter="brightness(80%)"
               ml={{
@@ -84,6 +91,4 @@ const MovieDetails = (props: IProps) => {
       )}
     </>
   );
-};
-
-export default observer(MovieDetails);
+});

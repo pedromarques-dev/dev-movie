@@ -41,7 +41,7 @@ export interface IScrollMovie {
   poster_path: string;  
 }
 
-export interface propsResults {
+export interface IPropsResults {
   id: number;
   title: string;
   src: string;

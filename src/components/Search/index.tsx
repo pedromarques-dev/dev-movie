@@ -3,13 +3,13 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { observer } from "mobx-react-lite";
 
 export interface IProps {
-  type: string;
-  placeholder: string;
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const Search = (props: IProps) => {
+export const Search: React.FC<IProps> = observer((props) => {
+  const { value, onChange } = props;
+
   return (
     <Box
       textAlign="center"
@@ -21,8 +21,8 @@ const Search = (props: IProps) => {
       <Input
         type="search"
         placeholder="Buscar Filme..."
-        value={props.value}
-        onChange={props.onChange}
+        value={value}
+        onChange={onChange}
         w="350px"
         p="0 15px"
         bg="0"
@@ -49,6 +49,5 @@ const Search = (props: IProps) => {
       />
     </Box>
   );
-};
+});
 
-export default observer(Search);

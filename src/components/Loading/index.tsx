@@ -1,6 +1,7 @@
+import React from "react";
 import { Box, Image } from "@chakra-ui/react";
 
-export const Loading = () => {
+export const Loading: React.FC = () => {
   return (
     <Box
       bg="#000000"

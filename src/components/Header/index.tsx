@@ -1,12 +1,15 @@
+import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import Search, { IProps as SearchProps } from "../Search";
+import { Search, IProps as SearchProps } from "../Search";
 
 interface IProps {
   searchProps?: SearchProps;
 }
 
-export const Header = (props: IProps) => {
+export const Header: React.FC<IProps> = (props: IProps) => {
+  const { searchProps } = props;
+
   return (
     <Box
       w="100%"
@@ -28,12 +31,10 @@ export const Header = (props: IProps) => {
         </Link>
       </Box>
 
-      {props.searchProps && (
+      {searchProps && (
         <Search
-          type={props.searchProps.type}
-          placeholder="Buscar filmes..."
-          value={props.searchProps.value}
-          onChange={props.searchProps.onChange}
+          value={searchProps.value}
+          onChange={searchProps.onChange}
         />
       )}
     </Box>

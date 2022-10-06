@@ -1,16 +1,20 @@
+import React from "react";
 import { Box, Image, Text } from "@chakra-ui/react";
+import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
-import { propsResults } from "../../interfaces";
+import { IPropsResults } from "../../interfaces";
 
-export const MoviesResults = (props: propsResults) => {
+export const MoviesResults: React.FC<IPropsResults> = observer((props) => {
+  const { id, src, title } = props;
+
   return (
     <Box color='white'>
-      {props.src && (
+      {src && (
         <Box textAlign='center' position='relative'>
-          <Link to={`/${props.id}`}>
+          <Link to={`/${id}`}>
             <Image
-              src={`https://image.tmdb.org/t/p/w300${props.src}`}
-              alt={props.title}
+              src={`https://image.tmdb.org/t/p/w300${src}`}
+              alt={title}
               w='250px'
               h='300px'
               transition='0.3 ease-in-out'
@@ -29,7 +33,7 @@ export const MoviesResults = (props: propsResults) => {
                 >
                   <Text
                     noOfLines={1}
-                  >{props.title}</Text>
+                  >{title}</Text>
                 </Box>
           </Link>
         </Box>
@@ -37,6 +41,6 @@ export const MoviesResults = (props: propsResults) => {
       }
     </Box>
   );
-};
+});
 
 

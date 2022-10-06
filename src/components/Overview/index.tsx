@@ -1,12 +1,14 @@
-import { Text } from "@chakra-ui/react";
 import * as React from "react";
+import { Text } from "@chakra-ui/react";
 import { observer } from "mobx-react-lite";
 
 interface IProps {
   overview: string;
 }
 
-const Overview: React.FC<IProps> = (props: IProps) => {
+export const Overview: React.FC<IProps> = observer((props: IProps) => {
+  const { overview } = props;
+
   return (
     <Text
       w={{
@@ -27,9 +29,8 @@ const Overview: React.FC<IProps> = (props: IProps) => {
         md: "10px 15px 0 0",
       }}
     >
-      {props.overview}
+      {overview}
     </Text>
   );
-};
+});
 
-export default observer(Overview);

@@ -1,0 +1,12 @@
+export { Buttons } from "./Button";
+export { Header } from "./Header";
+export { GenreList } from "./ListOfGenres";
+export { Loading } from "./Loading";
+export { MovieDetails } from "./MovieDetails";
+export { MoviesResults } from "./MovieResults";
+export { Movies } from "./Movies";
+export { MovieInitialSection } from "./MoviesInitialSection";
+export { MoviesSearched } from "./MoviesSearched";
+export { MoviesSection } from "./MoviesSection";
+export { Overview } from "./Overview";
+export { Search } from "./Search";

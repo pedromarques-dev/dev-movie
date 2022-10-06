@@ -1,8 +1,11 @@
+import React from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Button, IconButton, Stack, Text } from "@chakra-ui/react";
 import { IButton } from "../../interfaces";
 
-export const Buttons = (props: IButton) => {
+export const Buttons: React.FC<IButton> = (props) => {
+  const { backPagination, pagination, nextPagination } = props;
+
   return (
     <Stack
       spacing={2}
@@ -12,7 +15,7 @@ export const Buttons = (props: IButton) => {
       color="white"
     >
       <Button
-        onClick={props.backPagination}
+        onClick={backPagination}
         size="xs"
         border="0"
         bg="0"
@@ -34,9 +37,9 @@ export const Buttons = (props: IButton) => {
           }}
         />
       </Button>
-      <Text>Pagina {props.pagination} de 10</Text>
+      <Text>Pagina {pagination} de 10</Text>
       <Button
-        onClick={props.nextPagination}
+        onClick={nextPagination}
         size="xs"
         border="0"
         bg="0"

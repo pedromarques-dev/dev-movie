@@ -8,14 +8,16 @@ interface IProps {
   movieResults: IMovieResults[];
 }
 
-const MoviesSearched: React.FC<IProps> = (props) => {
+export const MoviesSearched: React.FC<IProps> = observer((props) => {
+  const { movieResults } = props;
+
   return (
     <Box mt='10px'>
       <Box textAlign="center" mb={10} mt={5}>
         <Button onClick={() => window.location.reload()}>Cancelar busca</Button>
       </Box>
       <Flex flexWrap='wrap' justifyContent='center'>
-        {props.movieResults.map((movie: IMovieResults) => {
+        {movieResults.map((movie: IMovieResults) => {
             return (
               <MoviesResults
                 title={movie.title}
@@ -28,6 +30,5 @@ const MoviesSearched: React.FC<IProps> = (props) => {
       </Flex>
     </Box>
   );
-};
+});
 
-export default observer(MoviesSearched);

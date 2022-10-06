@@ -1,17 +1,29 @@
 // import { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { ICategory, IScrollMovie } from "../../interfaces";
 import { Box, Text, Flex } from "@chakra-ui/react";
 import { observer } from "mobx-react-lite";
+import { ICategory, IScrollMovie } from "../../interfaces";
 
-const Movies = (props: ICategory) => {
+export const Movies: React.FC<ICategory> = observer((props) => {
+  const { elements, title } = props;
   return (
     <Box mx={4}>
-      <Text fontSize="3xl" color="white" py="15px">
-        {props.title}
+      <Text 
+        fontSize="3xl" 
+        color="white" 
+        py="15px"
+        px={3}
+      >
+        {title}
       </Text>
-      <Flex w='100%' flexWrap='wrap' justifyContent="center">
-        {props.elements.results.map((movie: IScrollMovie) => {
+      <Flex 
+        w='100%' 
+        flexWrap='wrap' 
+        justifyContent="center"
+        mt={7}
+      >
+        {elements.results.map((movie: IScrollMovie) => {
           return (
             <Link key={movie.id} to={`/${movie.id}`} >
               <Box position="relative" textAlign="center" w='100%' minWidth='310px' minHeight='450px' h='100%' >
@@ -43,6 +55,4 @@ const Movies = (props: ICategory) => {
       </Flex>
     </Box>
   );
-};
-
-export default observer(Movies)
+});

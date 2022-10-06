@@ -1,14 +1,13 @@
 import * as React from "react";
 import { List, ListItem } from "@chakra-ui/react";
-import { IGenre } from "../../interfaces";
 import { observer } from "mobx-react-lite";
-import { IMovieDetails } from "../../interfaces";
+import { IGenre, IMovieDetails } from "../../interfaces";
 
 interface IProps {
   movieDetails: IMovieDetails;
 }
 
-const GenreList: React.FC<IProps> = (props: IProps) => {
+export const GenreList: React.FC<IProps> = observer((props: IProps) => {
   return (
     <List
       display="flex"
@@ -29,6 +28,5 @@ const GenreList: React.FC<IProps> = (props: IProps) => {
       ))}
     </List>
   );
-};
+});
 
-export default observer(GenreList);

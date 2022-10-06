@@ -1,9 +1,8 @@
+import * as React from "react";
 import { Text } from "@chakra-ui/react";
 import { observer, useLocalObservable } from "mobx-react-lite";
-import * as React from "react";
 import { useParams } from "react-router-dom";
-import { Header } from "../../components/Header";
-import MovieDetails from "../../components/MovieDetails";
+import { Header, Loading, MovieDetails } from "../../components";
 import { Store } from "./store";
 
 const MoviePage = () => {
@@ -19,6 +18,7 @@ const MoviePage = () => {
   return (
     <>
       <Header  />
+      {store.loader && <Loading />}
       {store.movieDetails ? (
         <MovieDetails movieDetails={store.movieDetails} />
       ) : (
