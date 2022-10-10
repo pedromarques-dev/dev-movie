@@ -31,10 +31,7 @@
 ## Objetivo
 
   O desafio é criar uma listagem de objetos(filmes) onde poderá ser filtrado qualquer um dos filmes através do campo de busca. Essa filtragem deve ser automatica, de acordo com o que o usuário está digitando no campo. Os desafios extras eram criar uma paginação e uma pagina interna de cada filme com seus detalhes.
-  <video width="320" height="240" controls>
-    <source src="./public/assets/images/devmovie.mp4" type="video/mp4">
-  </video>
-  
+ 
   Alguns metodos utilizados no projeto:
    
    * React-router-dom;
@@ -48,7 +45,9 @@
    * Interfaces com TypeScript
    * Styled Components
    * Paginação 
-
+   * Mobx
+   * Chakra UI
+ 
 ## Tecnologias
 
  * HTML
@@ -57,10 +56,12 @@
  * React
  * GIT
  * Integração com API
+ * Mobx
+ * Chakra UI
 
 ## Curiosidade
   Essa é a pagina interna com alguns detalhes do filme:
-  ![image](https://user-images.githubusercontent.com/81711739/156869631-36ec5ace-55ed-491b-b8f9-d2d4f919efb7.png)
+  ![Screenshot_20221010_111003](https://user-images.githubusercontent.com/81711739/194885828-f6bc7a93-3d5e-4775-9e20-5992059128d7.png)
 
 ## Acessando o site
 
