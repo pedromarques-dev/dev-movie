@@ -31,7 +31,9 @@
 ## Objetivo
 
   O desafio é criar uma listagem de objetos(filmes) onde poderá ser filtrado qualquer um dos filmes através do campo de busca. Essa filtragem deve ser automatica, de acordo com o que o usuário está digitando no campo. Os desafios extras eram criar uma paginação e uma pagina interna de cada filme com seus detalhes.
-  <img src='./public/assets/images/dev-movie.gif'>
+  <video width="320" height="240" controls>
+    <source src="./devmovie.mp4" type="video/mp4">
+  </video>
   
   Alguns metodos utilizados no projeto:
    
