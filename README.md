@@ -2,6 +2,12 @@
 
 ![Screenshot_20221010_110129](https://user-images.githubusercontent.com/81711739/194883942-1d7ab51d-ee0e-4151-b99d-f19d7e0e521b.png)
 
+## CORS - IMPORTANTE!!
+
+So sera possivel acessar os detalhes do filme se voce ativar uma extensao do google chamada Cors
+![Screenshot_20221010_111321](https://user-images.githubusercontent.com/81711739/194886426-cf34509a-6e59-4a9a-a48f-d054a83431f9.png)
+
+
 
 ## Tabela do conteúdo
 
