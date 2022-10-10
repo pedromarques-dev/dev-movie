@@ -1,6 +1,6 @@
 # Projeto Dev Movie
 
-![image](https://user-images.githubusercontent.com/81711739/156869488-a2b70fbc-7e49-492d-b4ff-8226b390ff74.png)
+![Screenshot_20221010_110129](https://user-images.githubusercontent.com/81711739/194883942-1d7ab51d-ee0e-4151-b99d-f19d7e0e521b.png)
 
 
 ## Tabela do conteúdo
