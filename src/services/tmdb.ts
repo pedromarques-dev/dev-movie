@@ -55,11 +55,5 @@ export const getMovieList = async (pagination: number) => {
         `/discover/movie?with_genres=9648&language=pt-BR&api_key=${API_KEY}&page=${pagination}`
       ),
     },
-    {
-      title: "Comédia",
-      elements: await loadData(
-        `/discover/movie?with_genres=35%&language=pt-BR&api_key=${API_KEY}&page=${pagination}`
-      ),
-    },
   ];
 };
